@@ -47,7 +47,7 @@ const getDataForCountry = (countryName) => {
                         deaths: countryData.deaths,
                         cases: countryData.cases,
                         recovered: countryData.recovered,
-                        flagImgSrc: countryData.flagImgSrc // Here, it should be countryData.flagImgSrc
+                        flagImgSrc: countryData.flagImgSrc
                     };
                     console.log("Requested search for " + countryName + "found--" + countryData)
                     resolve(transformedData);
@@ -61,7 +61,7 @@ const getDataForCountry = (countryName) => {
                 deaths: countryData.deaths,
                 cases: countryData.cases,
                 recovered: countryData.recovered,
-                flagImgSrc: countryData.flagImgSrc // Here, it should be countryData.flagImgSrc
+                flagImgSrc: countryData.flagImgSrc
             }
             resolve(transformedData);
         }

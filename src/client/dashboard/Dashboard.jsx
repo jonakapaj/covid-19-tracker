@@ -22,11 +22,11 @@ const Dashboard = () => {
     useEffect(() => {
         getDataForCountry(selectedCountryGlobal)
             .then(data => {
-                console.log('Fetched Data:', data);  // Debugging line
+                console.log('Fetched Data:', data);
                 setSelectedCountryData(data);
             })
             .catch(err => {
-                console.error(err); // Log the error for debugging
+                console.error(err);
             })
     }, [selectedCountry, selectedCountryGlobal]);
 
@@ -124,10 +124,8 @@ const Dashboard = () => {
             }, {
                 headers: {'Authorization': token}
             });
-            // Update the favorites state directly with the response
             setFavorites(response.data);
             setFavoriteCountries(response.data)
-            // Update selectedCountry based on the action taken
             if (action === 'add') {
                 setSelectedCountry(countryName);
             } else {

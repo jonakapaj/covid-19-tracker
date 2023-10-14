@@ -37,16 +37,13 @@ const CovidMap = ({onCountryClick}) => {
     useEffect(() => {
         if (!Object.keys(deathData).length) return;
 
-        // Width and height for our map
         const width = 960;
         const height = 500;
 
-        // Create a unit projection.
         const projection = d3.geoMercator()
             .translate([width / 2, height / 2])
             .scale(150);
 
-        // Create a path generator.
         const path = d3.geoPath().projection(projection);
 
         fetchGeoJsonData().then(data => {
@@ -62,12 +59,13 @@ const CovidMap = ({onCountryClick}) => {
                 .attr('fill-opacity', 0.5)
                 .attr('stroke', '#333')
                 .attr('stroke-width', 1)
-                .on('mouseover', function (d) { // Hover effect
+                .on('mouseover', function (d) {
+                    // Hover effect
                     d3.select(this)
                         .attr('fill-opacity', 0.8)
                         .attr('stroke-width', 2);
                 })
-                .on('mouseout', function (d) { // Reverting hover effect
+                .on('mouseout', function (d) { // remove hover effect
                     d3.select(this)
                         .attr('fill-opacity', 0.5)
                         .attr('stroke-width', 1);
@@ -82,10 +80,7 @@ const CovidMap = ({onCountryClick}) => {
 
                     const countryName = d.properties.name;
                     const countryData = deathData[countryName];
-                    if (countryData) {
-                        // Propagate the data to the parent
-                        onCountryClick(countryData);
-                    }
+                    if (countryData) {onCountryClick(countryData);}
                 });
         });
     }, [deathData, onCountryClick]);
