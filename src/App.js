@@ -1,30 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import Sidebar from './Sidebar';
-import Countries from './Countries';
-import Navbar from './Navbar';
-import UserPanel from './UserPanel';
+import Login from './client/auth/Login';
+import Register from './client/auth/Register';
+import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import HomePage from "./client/dashboard/HomePage";
+import {UserProvider} from "./client/user/UserContext";
+import GuardedRoute from "./GuardedRoute";
 
 function App() {
-  return (
-    <div className="App">
-      <div className='container'>
-        <div className='row'>
-          <div className='col-7'><Navbar /></div>
-        </div>
-      </div>
+    return (
+        <div style={{backgroundColor: "#f8f9fa", minHeight: "100vh"}} className="App">
+            <UserProvider>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Login/>}/>
+                        <Route path="/register" element={<Register/>}></Route>
+                        <Route path="/homepage" element={<GuardedRoute>
+                            <HomePage/>
+                        </GuardedRoute>}/>
+                    </Routes>
+                </BrowserRouter>
+            </UserProvider>
 
-      <div className='container-fluid'>
-        <div className="row">
-          <div className="col-2"><Sidebar /></div>
-          <div className="col-7"><Countries /></div>
-          <div className="col-3"><UserPanel /></div>
         </div>
-
-       
-      </div>
-    </div>
-  );
+    );
 }
 
 export default App;

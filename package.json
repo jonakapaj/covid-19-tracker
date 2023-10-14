@@ -3,12 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-leaflet/core": "^2.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/leaflet": "^1.9.6",
+    "axios": "^1.5.1",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.2",
+    "constants-browserify": "^1.0.0",
+    "core-js": "^3.33.0",
+    "cors": "^2.8.5",
+    "d3": "^7.8.5",
+    "d3-geo": "^3.1.0",
+    "data.js": "^0.12.11",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^3.1.2",
+    "leaflet": "^1.9.4",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.5.3",
+    "popper.js": "^1.16.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
+    "react-globe.gl": "^2.25.0",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
+    "three": "^0.157.0",
+    "topojson": "^3.0.2",
+    "topojson-client": "^3.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +60,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
   }
 }
